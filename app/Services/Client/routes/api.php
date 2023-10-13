@@ -1,5 +1,9 @@
 <?php
 
+use App\Services\Client\Http\Controllers\Product\ProductController;
+use Lucid\Entities\Request;
+use Illuminate\Routing\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Service - API Routes
@@ -12,16 +16,16 @@
 */
 
 // Prefix: /api/client
-Route::group(['prefix' => 'client'], function() {
+Route::group(['prefix' => 'client'], function () {
 
     // Controllers live in src/Services/Client/Http/Controllers
 
-    Route::get('/', function() {
-        return response()->json(['path' => '/api/client']);
-    });
+    // Route::get('/', function() {
+    //     return response()->json(['path' => '/api/client']);
+    // });
 
-    Route::middleware('auth:api')->get('/user', function (Request $request) {
-        return $request->user();
-    });
+    // Route::middleware('auth:api')->get('/user', function (Request $request) {
+    //     return $request->user();
+    // });
 
 });
