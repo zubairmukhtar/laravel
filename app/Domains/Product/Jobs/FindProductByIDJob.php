@@ -27,8 +27,8 @@ class FindProductByIDJob extends Job
      */
     public function handle(): JsonResponse
     {
-        $product = Product::findorFail($this->id);
+        $product = Product::with('color','size')->findorFail($this->id);
 
-        return response()->json(['product' => $product]);
+        return response()->json($product);
     }
 }

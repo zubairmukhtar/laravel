@@ -16,8 +16,8 @@ class GetListProductJob extends Job
      */
     public function handle(): JsonResponse
     {
-        $products = Product::paginate(10);
+        $products = Product::get();
 
-        return response()->json(['products' => $products]);
+        return response()->json($products);
     }
 }
